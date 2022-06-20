@@ -1,4 +1,5 @@
 class InterestCalculator
+  MONTHS_IN_YEAR = 12
   
   def initialize
   end

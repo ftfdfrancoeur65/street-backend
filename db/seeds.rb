@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+include FactoryBot::Syntax::Methods
+
+
+20.times do 
+  create(:loan, amount: rand(15)*10_000)
+end

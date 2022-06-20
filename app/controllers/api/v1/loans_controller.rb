@@ -1,5 +1,4 @@
 class Api::V1::LoansController < ApplicationController
-  respond_to :json
   
 
   # POST /deals/1/construction-draws.json
@@ -20,7 +19,7 @@ class Api::V1::LoansController < ApplicationController
   # PATCH/PUT /construction-draws/1.json
   def update
     @loan = Loan.find(params[:id])
-    if @loan.update(loan_params)!
+    if @loan.update!(loan_params)
       render json: @loan
     else
       render json: @loan.errors, status: :unprocessable_entity
