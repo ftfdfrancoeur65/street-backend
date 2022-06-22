@@ -1,9 +1,16 @@
 class Api::V1::LoansController < ApplicationController
   
 
-  # POST /deals/1/construction-draws.json
+
+  def index
+    @loans = Loan.all
+    # Bad, always want to paginate, just for mvp
+    render json: @loans, status: :ok
+    
+  end
+
   def create
-    @loan = Loan.build(loan_params)
+    @loan = Loan.new(loan_params)
     if @loan.save!
       render json: @loan
     else
@@ -16,7 +23,6 @@ class Api::V1::LoansController < ApplicationController
     render json: @loan, status: :ok
   end
 
-  # PATCH/PUT /construction-draws/1.json
   def update
     @loan = Loan.find(params[:id])
     if @loan.update!(loan_params)

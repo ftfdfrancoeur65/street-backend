@@ -1,24 +1,18 @@
-# README
+# Quick start for ls-backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Clone the repo locally ✅
 
-* Ruby version
+```
+bundle install
 
-* System dependencies
+rails db:setup
+# this will run migrations that create the loans table and also
+# seed the database with about 20 loans
 
-* Configuration
+rails s -p 3001
+# this will run the server on port 3001, frontend client runs on 3000
 
-* Database creation
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+All set, try hitting the api/v1/loans/1 endpoint! ✅
